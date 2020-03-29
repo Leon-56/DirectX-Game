@@ -1,0 +1,3 @@
+﻿  WinMain.cpp
+F:\DirectX_vs\WinMain.cpp(33,1): warning C4007: “WinMain”: 必须是“__stdcall”
+  DirectX_vs.vcxproj -> F:\DirectX_vs\Debug\DirectX_vs.exe
