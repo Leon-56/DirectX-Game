@@ -19,6 +19,9 @@
     <Filter Include="源文件\Core\Window">
       <UniqueIdentifier>{7659844e-4879-4851-bcca-92476be38c2d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Core\ErrorHandler">
+      <UniqueIdentifier>{a18c3b1a-60e2-408e-8ac5-a14d8cf7869b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -30,9 +33,15 @@
     <ClCompile Include="Window.cpp">
       <Filter>源文件\Core\Window</Filter>
     </ClCompile>
+    <ClCompile Include="YuGException.cpp">
+      <Filter>源文件\Core\ErrorHandler</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="YuGException.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
