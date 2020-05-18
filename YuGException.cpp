@@ -1,4 +1,4 @@
-#include "YuGException.h"
+#include "YUGException.h"
 #include <sstream>
 
 YuGException::YuGException(int line, const char* file) noexcept
@@ -19,4 +19,17 @@ const char* YuGException::what() const noexcept
 const char* YuGException::GetType() const noexcept
 {
 	return "YuG Exception";
+}
+
+const std::string& YuGException::GetFile() const noexcept
+{
+	return file;
+}
+
+std::string YuGException::GetOriginString() const noexcept
+{
+	std::ostringstream oss;
+	oss << "[File] " << file << std::endl
+		<< "[Line] " << line;
+	return oss.str();
 }

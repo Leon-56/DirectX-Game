@@ -6,20 +6,36 @@ int CALLBACK WinMain(
 	LPSTR lpCmdLine,
 	int nCmdShow)
 {
-	Window wnd(800, 300, "YuG's Box");
-
-	MSG msg;
-	BOOL gResult;
-	while ((gResult = GetMessage(&msg, nullptr, 0, 0)) > 0)
+	try
 	{
-		TranslateMessage(&msg);
-		DispatchMessage(&msg);
-	}
-	
-	if (gResult == -1)
-	{
-		return -1;
-	}
+		Window wnd(800, 300, "YuG's Box");
 
-	return 0;
+		MSG msg;
+		BOOL gResult;
+		while ((gResult = GetMessage(&msg, nullptr, 0, 0)) > 0)
+		{
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
+
+		if (gResult == -1)
+		{
+			return -1;
+		}
+
+		return 0;
+	}
+	catch (const YuGException & e)
+	{
+		MessageBox(nullptr, e.what(), e.GetType(), MB_OK | MB_ICONEXCLAMATION);
+	}
+	catch (const std::exception & e)
+	{
+		MessageBox(nullptr, e.what(), "Standard Exception", MB_OK | MB_ICONEXCLAMATION);
+	}
+	catch (...)
+	{
+		MessageBox(nullptr, "No details available", "Unknown Exception", MB_OK | MB_ICONEXCLAMATION);
+	}
+	return -1;
 }
